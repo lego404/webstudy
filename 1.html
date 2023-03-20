@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML 기본</title>
+    <meta charset="utf-8">
+    <h1>
+        <mark>[HTML]</mark>
+    </h1>
+        
+
+</head>
+<body>
+    <a href="index.html">돌아가기</a>
+    <h3>여기는 head~~</h3>
+    <ul>
+        <li>&lt;!DOCTYPE html&gt; 혹은 &lt;!doctype html&gt;</li>
+        <li>&lt;html&gt; 태그로 전체 감싸기</li>
+        <li>한글 깨질 땐 &lt;meta charset = “utf-8”&gt;<br>
+            : 홈페이지야 이 웹페이지는 UTF-8로 만들어졌기 때문에 UTF-8로 열어야 해</li>
+        <li>&lt;title&gt;홈페이지 이름&lt;/title&gt;</li>
+    </ul>
+    <hr>
+    <h3>여기는 body~~</h3>
+    <ul>
+        <li><h1>&lt;h1&gt;&lt;/h1&gt;</h1><h2>&lt;h2&gt;&lt;/h2&gt;</h2><h3>&lt;h3&gt;&lt;/h3&gt;</h3><h4>&lt;h4&gt;&lt;/h4&gt;</h4><h5>&lt;h5&gt;&lt;/h5&gt;</h5><h6>&lt;h6&gt;&lt;/h6&gt;</h6></li>
+        <li>강조: <strong>&lt;strong&gt;&lt;/strong&gt;</strong>, <b>&lt;b&gt;&lt;/b&gt;</b></li>
+        <li>underline: <u>&lt;u&gt;&lt;/u&gt;</u></li>
+        <li>태그는 중첩 사용 가능</li>
+        <li>줄바꿈: &lt;br&gt;</li>
+        <li>단락: &lt;p&gt; -> 단락과 단락의 간격 고정되어 있음. (시각적으로 자유도 떨어짐)
+            <br>&nbsp;&nbsp;&nbsp;+&#41; css 문법: <b>&lt;p style=&quot;margin-top:45px;&quot;></b> 태그 위쪽에 45px만큼 여백(margin) 생김</li>
+        <li>  <!--이미지-->
+            이미지: &lt;img&gt;
+            <br> <b>&lt;img src=&quot;이미지주소.png&quot;&gt;</b>
+            <br> 인터넷에 있는 이미지 써도 됨. 굳이 내 컴퓨터에 있는 이미지 안 써도 됨
+            <br><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMDVfMjcg%2FMDAxNjMzNDM0NzI4NjU4.SYmSZIwOG0BfhJ_B3ytLGenUcLQ-HPowGZtapSGdvBAg.pVkm8PkZEh3fIWvLM_0fup-WrE_6J8giF-9A0eTc68Yg.JPEG.idolounge%2Faespa_%25282%2529.jpg&type=sc960_832" width="300">
+            <p> <!--이미지 부록-->
+                <b>내 컴퓨터에 있는 이미지 쓰는 방법</b>
+                <ul>
+                  <li>1. 다운 받은 이미지를 프로젝트 폴더에 위치</li>
+                  <li>2. 같은 위치에 있는 이미지 파일이라면 src 속성값으로 이미지 파일의 이름만
+                      <br> 예: &lt;img src ="coding.jpg"&gt;</li>
+                </ul><br>
+                <b>이미지 크기 설정</b>
+                <ul>
+                    <li> width의 값으로 숫자나 % 사용하면 됨.
+                        <br>예: &lt;img src="이미지 주소" width="50%"&gt; </li>
+                </ul> <br>
+                무료 이미지 <!--(주소 태그는 요약 한 거 말고 full 주소 적어야함 https:~~)-->
+                <ul><li><a href="https://unsplash.com/ko" TARGET="_blank">unsplash.com</a></li>
+                </ul>
+            </p>
+        </li>
+        <li>ul: unordered list</li>
+        <li>ol: ordered list</li>
+        <!--link-->
+        <li><b>&lt;a href = "링크" target="_blank" title="커서 대면 나오는 텍스트"&gt;링크 걸어줄 텍스트&lt;/a&gt;</b></li>
+        <ul>
+            <li>target = "_blank": 링크 클릭했을 때 새창에서 페이지가 열리게 하는 속성</li>
+            <li>title: 이 링크가 어떤 내용을 담고 있는지를 툴팁으로 보여줌 </li>
+            <li>a: <b>a</b>nchor, href: <b>H</b>yperText <b>Ref</b>erence</li>
+            <a href="https://youtu.be/z2ZjutyxmjA" target="_blank" title = "인생짧다">제가 좋아하는 노래입니다</a>
+            <li>참고로 사이트 주소는 https://~~ 등 풀 주소로 적어야 작동함</li>
+        </ul>
+    </ul>
+    <hr>
+    <!--웹사이트 개념-->
+    <h3>웹사이토~</h3>
+    <ul>
+        <li>웹사이트(web site): 링크를 통해서 서로 결합되어 있는 웹페이지들의 그룹</li>
+        <li>웹 = 인터넷의 부분집합</li>
+        <li>웹호스팅 -> <a href = "https://www.netlify.com/" target = "_blank">netlify.com</a></li>
+        <ol>
+            <li>새로운 사이트 만들려면 Sites 메뉴 클릭</li>
+            <li>맨 밑에 점선 박스 or Add new site에서 Deploy manually(업데이트할때도) </li>
+            <li>업로드 할 파일엔 올릴 html 파일이 꼭 있어야 함</li>
+            <li>폴더 Drag and drop</li>
+            <li>주의!!! 안될때는 index.html 파일이 있는지 확인하기 (파일명 그대로)</li>
+        </ol>
+        <li>웹서버 -> <a href = "https://opentutorials.org/course/3084/31144" target = "_blank">생활코딩 강의 참조^^</a> </li>
+    </ul>
+    <hr>
+    <!--번외-->
+    <h3>여러 코드</h3>
+    <ul>
+        <li>체크박스: &lt;input type = "checkbox"&gt;</li>
+        <li>동영상 삽입
+            <ol>
+                <li>유튜브 -> 공유 버튼</li>
+                <li>EMBED (엥... 요즘은 퍼가기가 따로 있음 <> )</li>
+                <li>주소 복사</li>
+                <li>Dreams Come True</li>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/H69tJmsgd9I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </ol>
+        </li>
+        <li>댓글 기능 (백엔드에선 스팸차단 등 디지게어려움 여기선 걍 가져옴^^)
+            <ul>
+                <li>DISQUS, LiveRe 등등... (여기선 디스커스 사용)</li>
+            </ul>
+            <ol>
+                <li>디스커스에서 로그인 </li>
+                <li>Admin</li>
+                <li>Your Site -> New</li>
+                <li>광고 무시 후 2번째 창에서 유니버셜 코드</li>
+                <li>코드 카피 후 추가 (코드 내용 몰라도 됨)</li>
+                <li>web 주소가 file:~면 안 뜸. -> localhost/127.0.0.1/1.html 이런식으로 (자기자신 컴임)</li>
+                <li>댓글 짜잔 </li>
+            </ol>
+        </li>
+        <li>채팅 기능 (이것도 무료로 남의 기술 가져와버리기~^^)
+            <ol>
+                <li><a href = "https://www.tawk.to" target = "_blank">https://www.tawk.to</a></li>
+                <li>회원가입</li>
+                <li>거기서 하라는대로 하세요 걍 </li>
+                <li>관리자속성 -> 위젯</li>
+            </ol>
+        </li>
+        <li>방문자 분석 - 구글 애널리틱스 사용(월간 천만 조회까진 무료로 사용 가능)
+            <ol>
+                <li>측정 시작</li>
+                <li>계정: 개인, 단체, 회사 / 속성: 서비스 (코딩 동영상 서비스~) / 데이터 스트림: 웹, 안드로이드 IOS </li>
+                <li>다음 (비즈니스 정보는 스킵 가능)</li>
+                <li>동의 동의~ 걍 꺼~</li>
+                <li>데이터 스트림 -> 웹 -> 웹사이트 본인 주소 넣기 (스트림 이름은 걍 홈페이지 이런거)</li>
+                <li>설치 안내 -> 직접 설치 -> 복붙 </li>
+                <li>모든 페이지에 복붙해야함</li>
+            </ol>
+        </li>
+    </ul>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6418a3c44247f20fefe6fe35/1gs03ve12';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
