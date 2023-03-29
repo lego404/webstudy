@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS 기본</title>
+        <h1><mark>[CSS]</mark></h1>
+        <!--style-->
+        <style>
+            a{
+                color: black;
+                text-decoration: none;
+            }
+            h1{
+                font-size: 40px;
+                text-align: center;
+                border-bottom: 2px gray solid;
+                /*display: inline;*/
+                /*width: 100px; -> 이거 있으니 가운데 정렬이 안됨^^...*/
+                margin: 0px;
+                padding: 50px;
+            }
+            #grid{
+                border: 5px solid pink;
+                display: grid;
+                grid-template-columns: 150px 1fr; 
+            }
+            div{
+                border: 5px solid gray;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <a href = "index.html">돌아가기</a>
+
+        <h3>여기는 head</h3>
+        <!--style-->
+        <ul>
+            <li>&lt;style&gt;&lt;/style&gt;: html 문법이면서 css문법에 맞게 처리해야해</li>
+            <ul>
+                <li>&lt;style&gt;<br>
+                    <p>//a 태그의 폰트의 색을 blue로 하겠다<br>
+                        <b>a</b>{   &nbsp;&nbsp; &lt;!--선택자--&gt;<br>   
+                        &nbsp;&nbsp;&nbsp;&nbsp;color: blue;   &nbsp;&nbsp; &lt;!--효과--&gt; 
+                        <br>}
+                    </p>
+                &lt;/style&gt;</li> <br>
+                <li>
+                    <p><br>
+                        <b>h1</b>{   <br>   
+                        &nbsp;&nbsp;&nbsp;&nbsp;font-size: 40px;
+                        &nbsp;&nbsp;&nbsp;&nbsp;font-align: center;
+                        <br>}
+                    </p>
+               </li>
+            </ul>
+        </ul>
+        
+        <hr>
+        <h3>style 태그 외에 CSS 표시하기</h3>
+        <ul>
+            <li>속성 이용하기</li>
+            <ul>
+                <li>웹 페이지에서 여러 개의 a 태그 중 하나만 다른 색깔을 바꾸는 건 style을 쓰기 애매함</li>
+                <li>그래서 &lt;a href = "css.html" <b>color: red</b>&gt;CSS&lt;/a&gt; 사용</li>
+                <li>하지만 이렇게 쓰면 웹브라우저는 이게 html인지 css인지 모름</li> 
+                <li>그래서 &lt;a href = "css.html" <b>style = "color: red"</b>&gt;CSS&lt;/a&gt;</li>
+                <li>style 태그를 직접 사용하는 경우, 선택자가 필요없음 </li>
+            </ul>
+        </ul>
+        <h3>++추가</h3>
+        <ul>
+            <li>주소에서 밑줄 제거하기
+                <ul>
+                    <li>a 태그에서 <b>text-decoration: none;</b>   //장식이 없다</li>
+                </ul>
+            </li>
+            <li>특정 태그만 밑줄 유지하기
+                <ul>
+                    <li>태그 안에서 <b>style = "color: red; text-decoration: underline"</b> 추가해주기. (세미콜론으로 구분)</li>
+                </ul>
+            </li>
+            <li>
+                <img src ="image/stylesss.jpg" width ="500px">
+            </li>
+        </ul>
+
+        <hr>
+        <h3>특정 글자 크기 키우기</h3>
+        <ul>
+            <li>hi 선택자 안에 font-size: 60px(혹은 %)</li>
+        </ul>
+        <h3>가운데 정렬</h3>
+        <ul>
+            <li>text-align: center</li>
+        </ul>
+
+        <hr>
+        <h3>응용</h3>
+        <ul>
+            <li>목표
+                <ol>
+                    <li>모든 링크는 기본적으로 검은색</li>
+                    <li>사용자가 방문했던 링크는 회색</li>
+                    <li>현재 방문중인 링크는 빨간색</li>
+                </ol>
+            </li>
+            <li>방법
+                <ol>
+                    <li>a 선택자:<br>
+                        color: black;
+                    </li>
+                    <li>태그 직접 속성: <br>
+                        다른 애들은 전부 태그안에서 style = "color:gray" -> 하지만 이는 코드중복<br>
+                        따라서 A, B, C 중 A, B를 그룹으로 묶어서 폰트 컬러 바꿀거임 <br>
+                        예) <br>
+                        &lt; a href = "1.html" <b>class = "saw"</b>&gt;HTML <br>
+                        &lt; a href = "2.html" <b>class = "saw"</b>&gt;CSS <br>
+                        --------------------------------------------------<br>
+                        선택자 saw 만들기<br>
+                        <b>.saw {color: gray;}</b> <br>
+                        //. 안 붙이면 그냥 이름이 saw인 태그들 바꾸는건데<br>
+                        //. 붙이면 class 이름이 saw인 태그들 바꿈     
+                        <ul>
+                            <li><h3>클래스 중에 하나만 색 바꾸기</h3>
+                                <ul>
+                                    <li>예) <br>
+                                        &lt; a href = "1.html" class = "saw"&gt;HTML <br>
+                                        &lt; a href = "2.html" <b>class = "saw active"</b>&gt;CSS <br></li>
+                                    <li>
+                                        <b>.active { color: red; }</b>
+                                    </li>
+                                </ul>
+                            </li> 
+                            <li><h3>우선순위</h3>
+                                <ul>
+                                    <li>saw 클래스보다 active 클래스가 더 나중에 선언되었음. <br>
+                                        -> 더 나중에 선언한 명령이 영향력을 가짐. </li>
+                                    <li> id 선언
+                                        <ul>
+                                            <li>예) <br>
+                                                &lt; a href = "2.html" class = "saw" <b>id = "active"</b>&gt;CSS <br></li>
+                                            </li>
+                                            <li><b>#active {color: red;}</b></li>
+                                        </ul>
+                                    </li>
+                                    <li>우선순위: id 선택자(active) > 클래스 선택자(saw) > 태그 선택자(a)</li>
+                                    <li>다 같은 태그일 때 우선순위: 제일 마지막에 선언될수록 우선순위 높음</li>
+                                </ul>
+                            </li>
+                            <li>++추가
+                                <ul>
+                                    <li>id는 한 번만 언급해야 한다. </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+        <hr>
+
+        <p>
+        <h3>박스 모델</h3>
+            <pre>
+                &lt;style&gt;
+                    /*
+                    block level element(=태그)
+                    */
+                    <b>h1 {
+                        border-width: 5px;
+                        border-color: red;
+                        border-style: solid;</b>    /*발간색 박스 생김*/
+                        /*블록 레벨 태그들도 자신의 부피만큼 쓰게할 수 있음*/
+                        <b>display:inline;
+                    }</b>
+                    /*
+                    자기 자신의 크기만큼을 갖는 태그들
+                    inline element
+                    */
+                    <b>a {
+                        border-width: 5px;
+                        border-color: red;
+                        border-style: solid;
+                        </b>
+                        /*반대로 블록 레벨 태그로 바꿔주기*/
+                        <b>display:block;
+                    }</b>
+                &lt;/style&gt;
+            </pre>
+            +) 태그들을 안보이게 하기-> <b>display: none</b><br>
+            <ul>
+                <li>
+                    근데 위 태그는 중복이 발생함
+                    <pre>
+                    <b>h1, a{
+                        border-width: 5px;
+                        border-color: red;
+                        border-style: solid;
+                    }</b>
+                    </pre>
+                </li>
+                <li>근데 이것도 중복이라고 줄임ㅋ
+                    <pre>
+                    <b>h1, a{
+                        border: 5px red solid;
+                    }</b>
+                    /*참고로 위 속성들의 순서는 중요X*/ 
+                    </pre>
+                </li>
+                <li> 박스모델 안에서 여백 주기 
+                    <pre>
+                    <b>h1{
+                        border: 5px red solid;
+                        <mark>padding: 20px;</mark>
+                    }</b>
+                </li>
+                <li> 테두리와 테두리 사이 간격 <br>
+                    <img src = "image/margin.jpg" width = "300px"><br>
+                    <pre>
+                    <b>h1{
+                        border: 5px red solid;
+                        padding: 20px;
+                        <mark>margin: 20px;</mark>
+                    }</b>
+                </li>
+                <li>h1은 display: block이 생략되어 있음. block 전체를 쓴다는 건데 이걸 바꾸고 싶다<br>
+                    <pre>
+                    <b>h1{
+                        border: 5px red solid;
+                        padding: 20px;
+                        margin: 20px;
+                        <mark>width: 100px; //문제는 이거 넣으면 가운데 정렬이 안됨.</mark>
+                    }</b>
+                    </pre>
+                </li>
+                <li>박스 모델 응용
+                    <ul>
+                        <li>아래쪽에만 선 긋기<br>
+                            <b>border-bottom:1px solid gray;</b></li>
+                        <li>마우스 오른쪽 클릭 -> 웹 검사 -> h1 눌러서 각 박스 영역 색깔 확인하고 수정하기 <br>
+                        박스 안에 숫자 더블클릭해서 미리보기로 수정할 수 있음 (패딩값이나 등등...)</li>
+                        <li>margin은 선 바깥영역, padding은 선 안쪽 영역 </li>
+                        <li>가로 줄 긋기:<br>
+                            ol이나 ul태그 style -> <b>xborder-right: 1px solid gray;</b> <br>
+                            근데 이러면 걍 오른쪽에 선이 짱박혀있음. (ol태그가 block level 태그라서 block 태그 끝에 가있음.)<br>
+                            해결방법: ol태그 안에서 width 값 지정해서 ol 태그의 폭 지정해주기 <br>
+                            <img src = "image/paol.jpg" width="400px"><br>
+                            적당히 잘 조절하세연 
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+
+        <hr>
+        <p>
+        <h3>그리드</h3>
+        <ul>
+            <li>
+                <b>&lt;div&gt; ~ &lt;/div&gt;</b>: 블록 전체를 씀. 묶는 용도 
+            </li>
+            <li>
+                <b>&lt;span&gt; ~ &lt;/span&gt;</b>: div와 같은 목적. 블록단위 아닌 inline 태그
+            </li>
+            <li>
+                <div id = "grid"> <!--이 두 div 감싸기-->
+                    <div>이것은 div입니다</div>
+                    <div>이것은 div2입니다</div>
+                </div>
+            </li>
+            <li>
+                <p>
+                    두 개의 태그 나란히 배치하기
+                    <ul>
+                        <li>#부모태그(grid, id 이름은 아무거나 해도됨)에서
+                            <pre>
+    display: grid;
+    grid-template-columns: 150px 1fr; 
+                            </pre>
+                            = 첫번째 컬럼은 150정도 고정적으로 쓰고 두번째 컬럼은 나머지 다 쓴다
+                        </li>
+                        <li>fr: 화면 전체를 쓰는 것 <br> 예) 2fr 1fr -> 2:1 비율로 화면 전체를 씀 </li>
+                        <li>tip) grid 같은 최신 기술을 마음대로 사용해도 되는지<br>
+                            -> <b>caniuse</b>: 현재 웹 브라우저들이 얼마나 그 기술을 채택하고 있는가 보여주는 통계사이트</li>
+                    </ul>
+                </p>
+            </li>
+            <li>그리드 써먹기 -> index 페이지로~</li>
+            <li>tip) 여러 태그 중 #부모 아래에 있는 태그 하나만 선택하기 <br>
+                -> <b>#부모 태그 {}</b> 예) #grid ol {패딩값~}
+            </li>
+        </ul>
+        </p>
+
+        <hr>
+        <h3>반응형 웹/디자인 - 미디어 쿼리</h3>
+        <p>
+            <ul>
+                <li>화면의 크기에 따라서 웹 요소들이 맞춰서 동작하는 것</li>
+                <li><a href = "2.1.mediaquery.html">미디어쿼리 자세히</a></li>
+            </ul>
+        </p>
+    </body>
+</html>

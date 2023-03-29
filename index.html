@@ -4,11 +4,82 @@
         <meta charset = "utf-8">
         <title>프론트엔드 공부</title>
         <h1>프론트엔드를 공부합시다</h1>
+        <style>
+            ol{
+                border-right: 2px solid gray;
+                width: 100px;
+                margin: 0px;
+
+            }
+            h1{
+                /*border: 5px solid lightblue;*/
+                text-align: center;
+                margin: 20px;
+
+            }
+            h2{
+                border-bottom: 2px solid gray;
+                margin: 0px;
+                padding: 10px;
+            }
+            body{
+                margin: 0px;
+            }
+            #grid{
+                display: grid;
+                grid-template-columns: 150px 1fr;
+            }
+            #grid ol{
+                padding: 33px;
+            }
+            /*#grid #article 해도 됨*/
+            #article { 
+                padding: 25px;
+            }
+            @media  (max-width : 400px){
+                #grid{
+                    display:inline;
+                }
+                h1{
+                    font-size: 20px;
+                }
+                ol{
+                    border-right: none;                    
+                }
+            }
+        </style>
     </head>
     <body>
-        <h2>Pront-end</h2>
-        <ol>
-            <li><a href="1.html" title = "html의 세계로 출~발">HTML</a></li>
-        </ol>
+        <h2>기초</h2>
+        <div id = "grid"> <!--부모 그리드-->
+            <ol>
+                <li><a href="1.html" title = "html의 세계로 출~발">HTML</a></li>
+                <li><a href="2.css.html" title = "css의 세계로 출~발">CSS</a></li>
+            </ol>
+            <div id = "article">
+                <p>
+                    <h3>옹... 안녕하세요</h3> <br>
+                    에스파의 주된 음악 자체는 AI와 가상세계라는 그룹의 컨셉에 매우 충실한 성향을 띄고 있다. 
+                    SM의 선배 걸그룹들이 진지한 컨셉트와 발랄하거나 귀여운 이미지를 동시에 보였지만, 
+                    에스파는 적어도 아직까지는 그런 모습보다 타이틀곡에서만큼은 쿨하고 강렬한 음악을 내세우며 그룹의 성격을 구체화하는 데에 주력하는 편이다.
+                    <br><br>
+                    에스파의 음반은 개별 디스코그래피만으로 완성된 테마가 아니라, 
+                    마치 장편 시리즈 영화처럼 에스파라는 SMCU 브랜드를 더 풍성하게 강화하는 데에 활용된다. 
+                    한편 데뷔 이후 미래지향적 일렉트로닉 신스팝 댄스 테마를 후속 앨범을 통해 지속적으로 이어가고 있지만 
+                    그것과 별개의 스타일의 어쿠스틱 세션을 활용한 트랙도 시간이 갈수록 종종 포함되고 있다. 
+                    이는 작곡풀의 한계와 더불어 좋은 곡을 활용해서 일정 테마를 밀고 가면서도 
+                    선배 그룹인 레드벨벳처럼 앨범의 다양성과 창의성을 놓지 않기 위함인 듯하다.
+                    <br><br>
+                    이렇게 장르적 특성을 명확히 알기 어렵다는 특징도 노래를 들으면 뚜렷이 드러난다. 
+                    Next Level 이후 타이틀로 내세우는 곡들 대부분이 일렉트로니카, 힙합, 트랩, 락, R&B 등 
+                    성격이 전혀 다른 노래들을 과감하게 믹스함으로써 현실에서 찾기 힘든 독특한 성격을 구축한다는 점도 인상적이다. 
+                    사실은, SM의 선배 가수들 노래에서도 이런 특징을 보이는 노래들이 아예 없었던 것은 아니지만 
+                    SM의 주류 특징이라고 보기는 힘들었다. 
+                    이에 영향을 받은 다른 케이팝 노래들 역시 주로 성격이 비슷한 장르의 배치를 시도했다. 
+                    하지만 에스파부터는 아예 편곡과 비트 자체를 거의 다른 노래를 엮은 것처럼 
+                    전혀 다른 성격을 갖춘 파트들을 이어붙여도 각 장르의 차이점을 보이고 있다는 큰 특징도 있다.
+                </p>
+            </div>
+        </div>
     </body>
 </html>
